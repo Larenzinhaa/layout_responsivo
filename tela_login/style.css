@@ -1,23 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* reset das configurções */
+/* Reser das configurações padrões */
 *{
-    margin:0;
+    margin: 0;
     padding: 0;
     border: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 
-/* cor do fundo e da fonte */
+/* Cor do fundo e cor da fonte */
 body{
-    background-color: #182029;
+    background-color: #1b2029 ;
     color: #fff;
     font-weight: 500;
     display: flex;
     min-height: 100vh;
     min-width: 100vw;
-/* limitando a parte principal */
+}
+
+/* limitando a parte 'principal' */
 main{
     width: 50vw;
     display: flex;
@@ -32,12 +34,11 @@ main h1{
     margin-bottom: 3rem;
     text-align: center;
 }
-}
 
-/* ajustando as logos das redes sociais */
-main .sociais img {
+/* Ajustando os logos das redes sociais */
+main .sociais img{
     width: 36px;
-    margin-left: 3rem;
+margin-left: 3rem;
 }
 
 /* retira o 'underline' dos links */
@@ -54,21 +55,21 @@ main .sociais a:first-child img{
     margin-left: 0;
 }
 
-/* editando  o 'OU' */
-main .alternativo{
+/* editando o 'OU' */
+main .alternative{
     margin-top: 1rem;
 }
 
-main .alternativo span {
-    color: #999;
+main .alternative span{
+    color: #999999;
     font-size: 1.1rem;
     font-weight: 400;
     position: relative;
 }
 
-main .alternativo span::before, 
-main .alternativo span::after{
-    position:absolute;
+main .alternative span::before,
+main .alternative span::after {
+    position: absolute;
     content: '';
     height: 1px;
     width: 100px;
@@ -77,11 +78,11 @@ main .alternativo span::after{
     background: #999999;
 }
 
-main .alternativo span::after{
-    left:50px;
+main .alternative span::after{
+    left: 50px;
 }
 
-/* estilizando o formulário */
+/* estilizando o formulario */
 main form{
     display: flex;
     flex-direction: column;
@@ -110,6 +111,7 @@ main form input{
     border: 1px solid #161923;
     border-radius: 8px;
 }
+
 /* estilizando o botão */
 main form input[type="submit"]{
     cursor: pointer;
@@ -122,9 +124,11 @@ main form input[type="submit"]{
     font-size: 1.1rem;
     transition: all .3s ease-in-out;
 }
-main form input[type:"submit"]:hover{
+
+main form input[type='submit']:hover{
     background: #5d57af;
 }
+
 /* edição da imagem lateral */
 section.imagem{
     width: 50vw;
@@ -138,7 +142,7 @@ section.imagem img{
     width: 100%;
 }
 
-/* criar o circulo atrás da imagem */
+/* criar círculo atras da imagem */
 section.imagem .circle{
     position: absolute;
     height: 100%;
@@ -150,3 +154,34 @@ section.imagem .circle{
     z-index: -1;
 }
 
+/* Responsividade de acordo com o tamanho da tela */
+@media only screen and (min-width: 900px) and (max-width: 1200px){
+    section.imagem img{
+        width: 110%;
+    }
+    section.imagem .circle{
+        clip-path: circle(35% at right 80%);
+    }
+}
+@media only screen and (max-width: 900px) {
+    section.imagem{
+        display: none;
+        visibility: hidden;
+    }
+    main{
+        width: 100vw;
+    }
+}
+
+@media only screen and (min-width: 450px) {
+    main h1{
+        font-size: 2rem;
+    }
+    main .alternative span{
+        font-size: 0.8rem;
+    }
+    main form label span, 
+    main form input[type="submit"] {
+        font-size: 1rem;
+    }
+}
